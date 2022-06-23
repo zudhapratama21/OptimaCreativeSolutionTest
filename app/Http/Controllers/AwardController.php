@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Award;
 use Illuminate\Http\Request;
 
 class AwardController extends Controller
@@ -13,7 +14,11 @@ class AwardController extends Controller
      */
     public function index()
     {
-        //
+        $award = Award::all();
+
+        return view('admin.award.index',[
+            'award' => $award
+        ]);
     }
 
     /**

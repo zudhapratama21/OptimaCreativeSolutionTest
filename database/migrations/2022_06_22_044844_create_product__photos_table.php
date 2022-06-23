@@ -13,7 +13,7 @@ class CreateProductPhotosTable extends Migration
      */
     public function up()
     {
-        Schema::create('product__photos', function (Blueprint $table) {
+        Schema::create('product_photos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('product_id')->constrained('products');
             $table->string('photo_product');

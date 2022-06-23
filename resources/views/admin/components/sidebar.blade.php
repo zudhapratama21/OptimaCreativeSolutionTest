@@ -21,6 +21,9 @@
             <li class="{{request()->is('award') ? ' active-page' : ''}}">
                 <a href="/award"><i class="material-icons">cloud_queue</i>Award</a>
             </li>
+            <li class="{{request()->is('award') ? ' active-page' : ''}}">
+                <a href="/award"><i class="material-icons">cloud_queue</i>Media Sosial</a>
+            </li>
             <li>
                 <a href="todo.html"><i class="material-icons">
                     logout

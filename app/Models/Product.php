@@ -15,6 +15,7 @@ class Product extends Model
         'service_id',
         'name_company',
         'name_application',
+        'thumbnail_photo',
         'location',
         'industry',
         'size',
@@ -30,7 +31,7 @@ class Product extends Model
   
     public function productPhoto()
     {
-        return $this->hasMany(Product_Photo::class, 'id');
+        return $this->hasMany(Product_Photo::class, 'product_id');
     }
 
 

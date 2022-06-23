@@ -16,7 +16,11 @@
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
     <link href="/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
-    <link href="/assets/plugins/DataTables/datatables.min.css" rel="stylesheet">   
+    <link href="/assets/plugins/DataTables/datatables.min.css" rel="stylesheet">    
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/plugins/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/plugins/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+    
 
   
     <!-- Theme Styles -->

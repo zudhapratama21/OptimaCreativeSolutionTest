@@ -14,7 +14,14 @@
 <script src="/assets/js/pages/dashboard.js"></script>
 <script src="/assets/plugins/DataTables/datatables.min.js"></script>
 <script src="/assets/js/pages/datatables.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+<script src="/assets/plugins/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+@yield('js')
 <script>
+   $(document).ready(function() {
+        $('#summernote').summernote();
+    });
 
   //foto Produk
   $('.addFotoProduk').on('click',function(){

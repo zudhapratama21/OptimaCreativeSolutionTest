@@ -1,49 +1,16 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('admin.service.index');
-});
 
-Route::get('/service', function () {
-    return view('admin.service.index');
-});
-
-Route::get('/product', function () {
-    return view('admin.product.index');
-});
-
-Route::get('/product/create', function () {
-    return view('admin.product.create');
-});
-
-Route::get('/award', function () {
-    return view('admin.award.index');
-});
-
-Route::get('/award/create', function () {
-    return view('admin.award.create');
-});
-
-Route::get('/article', function () {
-    return view('admin.article.index');
-});
-
-Route::get('/article/create', function () {
-    return view('admin.article.create');
-});
+Route::resource('service', 'App\Http\Controllers\ServiceController'); 
+Route::resource('award', 'App\Http\Controllers\AwardController'); 
+Route::resource('product', 'App\Http\Controllers\ProductController'); 
+Route::POST('/product/{product}/uploadFotoProduk', [App\Http\Controllers\ProductController::class, 'uploadFotoProduk'])->name('produk.upload');
+Route::DELETE('/product/{fotoProduk}/deleteFoto', [App\Http\Controllers\ProductController::class, 'deleteFotoProduk'])->name('produk.delete');
+Route::resource('article', 'App\Http\Controllers\ArticleController'); 
 
 Auth::routes();
 
