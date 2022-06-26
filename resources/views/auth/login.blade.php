@@ -85,12 +85,24 @@
                     <div class="row">
                         <div class="col">
                             <div class="logo-box"><a href="#" class="logo-text">Intive Studio</a></div>
-                            <form>
+                            <form action="/login" method="POST">
+                                @csrf
                                 <div class="form-group">
-                                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+
+                                    @error('email')
+                                        <span class="text-danger" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" id="password" placeholder="Password">
+                                    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                                    @error('password')
+                                        <span class="text-danger" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-block btn-submit">Sign In</button>
                                 <div class="auth-options">

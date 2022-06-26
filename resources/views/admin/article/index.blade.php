@@ -1,5 +1,8 @@
 @extends('/admin/layout/app_dashboard')
 
+@section('breadchumb')
+    <li class="breadcrumb-item"><a href="/article">Article</a></li>  
+@endsection
 @section('content')
 <div class="row">
     <div class="col">
@@ -14,17 +17,39 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Title</th>
-                            <th>Thumbnail Title</th>
                             <th>Thumbnail Photo</th>                            
-                            <th>Meta</th>
-                            <th>Meta Title</th>
-                            <th>Meta Description</th>
-                            <th>Description</th>
+                            <th>Title</th>
+                            <th>Thumbnail Title</th>                                                       
                             <th>Action</th>                            
                         </tr>
                     </thead>
                     <tbody>
+                        @php
+                            $no=1;
+                        @endphp
+                        @foreach ($articles as $article)
+                            <tr>
+                                <td>{{$no++}}</td>
+                                <td>
+                                    <a type="button" data-toggle="modal" data-target="#modalEdit{{$article->id}}"  >
+                                        <img src="{{ asset('storage/'. $article->thumbnail_photo) }}" alt="" width="35%" height="35%">
+                                    </a>
+                                </td>
+                                <td>{{$article->title}}</td>
+                                <td>{{$article->thumbnail_title}}</td>
+                                <td>
+                                    <a href="{{ route('article.show', ['article'=>$article->id]) }}" class="btn btn-info btn-sm mb-2" type="button" ><i class="fas fa-eye"></i></a>
+                                    <a href="{{ route('article.edit', ['article'=>$article->id]) }}" class="btn btn-success btn-sm mb-2" type="button" ><i class="fas fa-edit"></i></a>
+
+                                    <form action="/article/{{$article->id}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm" ><i class="fas fa-trash"></i></button>
+                                    </form>
+
+                                </td>
+                            </tr>
+                        @endforeach
 
                 
                     </tbody>
@@ -34,4 +59,22 @@
         </div>
     </div>
 </div>
+
+@foreach ($articles as $article)
+<div class="modal fade bd-example-modal-lg" id="modalEdit{{$article->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Thumbnail Foto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="material-icons">close</i>
+                </button>
+            </div>
+            <div class="card-body">
+                <img src="{{ asset('storage/'. $article->thumbnail_photo) }}" alt="" width="100%" height="100%">
+            </div>                  
+        </div>
+    </div>
+</div> 
+@endforeach
 @endsection

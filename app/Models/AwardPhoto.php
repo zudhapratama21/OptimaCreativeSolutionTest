@@ -13,7 +13,7 @@ class AwardPhoto extends Model
 
     protected $fillable=[
         'award_id',
-        'award_photo'
+        'photo_award'
     ];
 
    

@@ -43,26 +43,4 @@
            $(this).parent().remove();
    });
 
-  //  foto award
-  $('.addFotoAward').on('click',function(){
-       addFotoAward();
-  });
-
-   function addFotoAward(){
-     var addFotoAward =`
-                <div class="form-group d-flex justify-content-between">
-                    <input type="file" name="foto_award[]" class="form-control">
-                    <a class="hapusFoto btn btn-danger btn-sm btn-outline"><i class="fas fa-trash text-red"></i></a>
-                </div>
-                `;                        
-     $('.fotoAward').append(addFotoAward);       
-   }
-
-   $(document).on("click", "a.hapusFoto", function () {
-           $(this).parent().remove();
-   });
-
-
-
-
 </script>

@@ -12,8 +12,7 @@ class Article extends Model
     protected $table = 'articles';
     protected $fillable = [
         'title',
-        'thumbnail_title',
-        
+        'thumbnail_title',        
         'thumbnail_photo',
         'meta',
         'meta_title',
@@ -24,7 +23,7 @@ class Article extends Model
   
     public function articlePhoto()
     {
-        return $this->hasMany(Comment::class, 'foreign_key', 'local_key');
+        return $this->hasMany(Article_Photo::class, 'article_id');
     }
 
     

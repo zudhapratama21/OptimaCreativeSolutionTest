@@ -10,6 +10,7 @@ class Award extends Model
     use HasFactory;
 
     protected $table='awards';
+    
     protected $fillable=[
         'name',
         'description',
@@ -17,7 +18,7 @@ class Award extends Model
     ];
 
   
-    public function articlePhoto()
+    public function awardPhoto()
     {
         return $this->hasMany(AwardPhoto::class, 'award_id');
     }

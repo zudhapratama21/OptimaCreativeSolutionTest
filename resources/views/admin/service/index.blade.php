@@ -1,7 +1,11 @@
 @extends('/admin/layout/app_dashboard')
 
-@section('content')
+@section('breadchumb')
+    <li class="breadcrumb-item">Service</li>      
+@endsection
 
+
+@section('content')
 <div class="row">
     <div class="col">
         <div class="card">

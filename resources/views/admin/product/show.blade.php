@@ -1,4 +1,8 @@
 @extends('/admin/layout/app_dashboard')
+@section('breadchumb')
+    <li class="breadcrumb-item"><a href="/product">Product</a></li>  
+    <li class="breadcrumb-item">Show Data</li>  
+@endsection
 @section('content')
 <div class="row">
     <div class="col">
@@ -91,7 +95,7 @@
                             </label>
                             <div class="owl-carousel owl-theme">
                                 @foreach ($product->productPhoto as $item)
-                                <div class="item">                                              
+                                <div class="item">                                                                                  
                                     <a type="button" data-toggle="modal" data-target="#modalEdit{{$item->id}}"  >
                                         <img src="{{ asset('storage/' . $item->photo_product) }}" alt="" height="300px" width="300px">                                                                                                                
                                     </a>                                    
@@ -149,17 +153,17 @@
 
     $('.owl-carousel').owlCarousel({
     loop:true,
-    margin:10,
+    margin:3,
     nav:true,
     responsive:{
         0:{
             items:1
         },
         600:{
-            items:3
+            items:2
         },
         1000:{
-            items:5
+            items:3
         }
     }
 })

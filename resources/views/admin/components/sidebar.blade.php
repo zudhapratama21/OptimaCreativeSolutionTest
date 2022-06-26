@@ -5,29 +5,37 @@
             <li class="sidebar-title">
                 Apps
             </li>
-            <li class="{{request()->is('dashboard') ? ' active-page' : ''}}">
-                <a href="index.html" ><i class="material-icons-outlined">dashboard</i>Dashboard</a>
+            <li class="{{request()->is('/') ? ' active-page' : ''}}">
+                <a href="/" ><i class="material-icons-outlined">dashboard</i>Dashboard</a>
             </li>
-            <li class="{{request()->is('service') ? ' active-page' : ''}}">
+            <li class="{{request()->is('service*') ? ' active-page' : ''}}">
                 <a href="/service"><i class="material-icons-outlined">inbox</i>Service</a>
             </li>
-            <li class="{{request()->is('product') ? ' active-page' : ''}}">
-                <a href="/product"><i class="material-icons-outlined">account_circle</i>Product</a>
+            <li class="{{request()->is('product*') ? ' active-page' : ''}}">
+                <a href="/product"><i class="material-icons"> inventory </i>Product</a>
             </li>
-            <li class="{{request()->is('article') ? ' active-page' : ''}}">
+            <li class="{{request()->is('article*') ? ' active-page' : ''}}">
                 <a href="/article"><i class="material-icons-outlined">calendar_today</i>Article</a>
                 
             </li>
-            <li class="{{request()->is('award') ? ' active-page' : ''}}">
-                <a href="/award"><i class="material-icons">cloud_queue</i>Award</a>
+            <li class="{{request()->is('award*') ? ' active-page' : ''}}">
+                <a href="/award"><i class="material-icons"> emoji_events </i>Award</a>
             </li>
-            <li class="{{request()->is('award') ? ' active-page' : ''}}">
-                <a href="/award"><i class="material-icons">cloud_queue</i>Media Sosial</a>
+            <li class="{{request()->is('mediasosial*') ? ' active-page' : ''}}">
+                <a href="/mediasosial"><i class="material-icons">cloud_queue</i>Media Sosial</a>
+            </li>
+            <li class="{{request()->is('profile*') ? ' active-page' : ''}}">
+                <a href="/profile"><i class="material-icons"> account_circle </i>Profile</a>
             </li>
             <li>
-                <a href="todo.html"><i class="material-icons">
-                    logout
-                    </i>Logout</a>
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                    <i class="material-icons">
+                        logout
+                        </i>Logout
+                </a>
+                
             </li>                               
         </ul>
     </div>

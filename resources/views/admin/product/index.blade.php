@@ -1,4 +1,8 @@
 @extends('/admin/layout/app_dashboard')
+@section('breadchumb')
+    <li class="breadcrumb-item"><a href="/product">Product</a></li>  
+    
+@endsection
 
 @section('content')
 <div class="row">
@@ -36,9 +40,9 @@
                                 <td>{{$product->name_application}}</td>
                                 <td>{{$product->name_company}}</td>                               
                                 <td>{{$product->link}}</td>
-                                <td class="d-flex align-items-center "> 
-                                    <a href="{{ route('product.show', ['product'=>$product->id]) }}" class="btn btn-info btn-sm mr-2" type="button" ><i class="fas fa-eye"></i></a>
-                                    <a href="{{ route('product.edit', ['product'=>$product->id]) }}" class="btn btn-success btn-sm mr-2" type="button" ><i class="fas fa-edit"></i></a>
+                                <td class=" align-items-center"> 
+                                    <a href="{{ route('product.show', ['product'=>$product->id]) }}" class="btn btn-info btn-sm mb-2" type="button" ><i class="fas fa-eye"></i></a>
+                                    <a href="{{ route('product.edit', ['product'=>$product->id]) }}" class="btn btn-success btn-sm mb-2" type="button" ><i class="fas fa-edit"></i></a>
 
                                     <form action="/product/{{$product->id}}" method="POST">
                                         @csrf
@@ -47,10 +51,10 @@
                                     </form>
                                 </td>
                             </tr>    
-
                             @php
                                 $no++;
                             @endphp
+
                         @endforeach
                         
                 
@@ -67,7 +71,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Thumbnail Aplikasi</h5>
+                <h5 class="modal-title" id="exampleModalCenterTitle">Thumbnail Foto</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <i class="material-icons">close</i>
                 </button>

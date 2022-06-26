@@ -101,7 +101,7 @@ class ProductController extends Controller
     }
 
     
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
         $data = $request->all();
         $photo = $request->file('thumbnail_photo');

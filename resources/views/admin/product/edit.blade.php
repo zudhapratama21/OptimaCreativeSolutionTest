@@ -1,4 +1,10 @@
 @extends('/admin/layout/app_dashboard')
+
+@section('breadchumb')
+    <li class="breadcrumb-item"><a href="/product">Product</a></li>  
+    <li class="breadcrumb-item">Edit Data</li>  
+@endsection
+
 @section('content')
 <div class="row">
     <div class="col">
