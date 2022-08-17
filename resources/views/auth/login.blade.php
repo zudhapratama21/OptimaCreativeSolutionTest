@@ -84,7 +84,7 @@
                 <div class="auth-form">
                     <div class="row">
                         <div class="col">
-                            <div class="logo-box"><a href="#" class="logo-text">Intive Studio</a></div>
+                            <div class="logo-box"><a href="#" class="logo-text">Coding Test | Optima Creative Solution</a></div>
                             <form action="/login" method="POST">
                                 @csrf
                                 <div class="form-group">

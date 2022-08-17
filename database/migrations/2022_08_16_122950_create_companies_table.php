@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAwardPhotosTable extends Migration
+class CreateCompaniesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateAwardPhotosTable extends Migration
      */
     public function up()
     {
-        Schema::create('award_photos', function (Blueprint $table) {
+        Schema::create('companies', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('award_id')->constrained('awards');
-            $table->string('photo_award');
+            $table->string('name');
+            $table->string('email')->nullable();
+            $table->string('logo')->nullable();
+            $table->string('website')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateAwardPhotosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('award_photos');
+        Schema::dropIfExists('companies');
     }
 }

@@ -11,10 +11,11 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'Intive Studio',
-            'email' => 'admin@gmail.com',
+            'name' => 'Admin',
+            'email' => 'admin@admin.com',
             'email_verified_at' => now(),
-            'password' => bcrypt('intive123')
+            'password' => bcrypt('password')
         ]);
+        
     }
 }

@@ -11,10 +11,7 @@
                 <img src="../../assets/images/avatars/profile-image-1.png" alt="profile image">
                 <span>{{auth()->user()->name}}</span><i class="material-icons dropdown-icon">keyboard_arrow_down</i>
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">          
-                <a class="dropdown-item" href="/profile">
-                    Profile                     
-                 </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">                          
 
                 <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();

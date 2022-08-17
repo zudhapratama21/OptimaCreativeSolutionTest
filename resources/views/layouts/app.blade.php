@@ -10,7 +10,7 @@
         
         
         <!-- Title -->
-        <title>Intive Studio</title>
+        <title>Coding Test | Optima Creative Solution</title>
         
         <!-- Styles -->
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet">

@@ -20,13 +20,15 @@
                         <label for="">Service Type</label>
                         <select name="service_id" id="" class="form-control" required>
                             <option value="" selected disabled>Choose Service</option>
+
                             @foreach ($services as $service)
                                 <option value="{{$service->id}}">{{$service->name}}</option>
-                            @endforeach
+                            @endforeach                            
 
                             @error('service_id')
                                <small class="text-danger">{{ $message }}</small>
                             @enderror
+
                         </select>
                     </div>
                 <div class="row">
